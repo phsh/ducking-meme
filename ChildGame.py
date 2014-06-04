@@ -7,28 +7,21 @@ class Question:
 		self.question = question
 		self.answer = answer
 
-questions = [ 
-Question(" 2 +  6 ? ", "8"), 
-Question(" 4 +  6 ? ", "10"), 
-Question(" 4 +  8 ? ", "12"), 
-Question(" 1 + 13 ? ", "14"),
-Question(" s ä t H ?", "Häst"),
-Question(" r s i G ?", "Gris"),
-Question(" 2 +  5 ?", "7"),
-Question(" R s o ?", "Ros"),
-Question(" o B k ?", "Bok")
-]
-
 aLotOfQuestions = {
 	" 2 +  6 ? ": "8", " 4 +  6 ? ": "10",
 	" 4 +  8 ? ": "10"," 1 + 13 ? ": "14",
-	" s ä t H ?": "Häst", " r s i G ?": "Gris"
+	" s ä t H ?": "Häst", " r s i G ?": "Gris",
+	" 2 +  5 ?": "7", " R s o ?": "Ros",
+	" o B k ?": "Bok"
 }
 
-w = csv.writer(open("questions.csv","w"))
+questions = list()
+questionsFile = open("questions.csv","w")
+w = csv.writer(questionsFile)
 for key, val in aLotOfQuestions.items():
 	w.writerow([key,val])
-
+	questions.append(Question(key,val))
+questionsFile.close()
 
 
 antal_correct = 0
