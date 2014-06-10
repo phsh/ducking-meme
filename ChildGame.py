@@ -1,11 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 import csv
+from Question import Question
 
-class Question:
-	def __init__(self, question, answer):
-		self.question = question
-		self.answer = answer
 seperator = "=========" * 10
 
 print seperator
