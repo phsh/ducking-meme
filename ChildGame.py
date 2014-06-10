@@ -6,10 +6,11 @@ class Question:
 	def __init__(self, question, answer):
 		self.question = question
 		self.answer = answer
+seperator = "=========" * 10
 
-print "=========" * 10
+print seperator
 print "Frågesport"
-print "=========" * 10
+print seperator
 
 aLotOfQuestions = {
 	" 2 +  6 ? ": "8", " 4 +  6 ? ": "10",
@@ -37,9 +38,12 @@ for question in questions:
 	else:
 		print "Fel"
 
-print "=========" * 10
+print seperator
 print "Du hade %s rätt utav %s frågor" % (antal_correct, len(questions))
-print "=========" * 10
+print seperator
 if len(questions)-antal_correct <= 1:
 	print "GULDSTJÄRNA!!!"
-	print "=========" * 10
+	print seperator
+elif len(questions)-antal_correct <=3:
+	print "SILVERSTJÄRNA!!!"
+	print seperator
