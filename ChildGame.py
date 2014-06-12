@@ -4,6 +4,7 @@ import csv
 import random, array
 from random import shuffle
 from random import randint
+from random import choice
 from Question import Question
 
 seperator = "=========" * 10
@@ -29,33 +30,35 @@ level_one = [
 'Hand'
 ]
 
-
 def generateMathQuestion(start_base, end_base ):
 	value_a = randint(start_base , end_base)
 	value_b = randint(start_base , end_base)
 	question = " " + str(value_a) + " + " + str(value_b) + " ? "
 	answer = str(value_a+value_b)
-	return question,answer
+	return Question(question,answer)
 
 def generateWordQuestion(list_of_words=level_one):
-
-	print len(list_of_words[0])
-	print list_of_words
-
-
-
-print generateWordQuestion()
-print aLotOfQuestions
-
+	answer = choice(list_of_words)
+	word = list(answer)
+	shuffle(word)
+	result = " ".join(word)
+	question = result + " ? " 
+	return Question(question, answer)
 
 questions = list()
+
+for x in xrange(0,5):
+	questions.append(generateWordQuestion())
+	questions.append(generateMathQuestion(1,10))
+
+'''
 questionsFile = open("questions.csv","w")
 w = csv.writer(questionsFile)
 for key, val in aLotOfQuestions.items():
 	w.writerow([key,val])
 	questions.append(Question(key,val))
 questionsFile.close()
-
+'''
 
 antal_correct = 0
 for question in questions:
