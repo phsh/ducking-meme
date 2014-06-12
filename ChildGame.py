@@ -14,7 +14,9 @@ aLotOfQuestions = {
 	" 4 +  8 ? ": "12"," 1 + 13 ? ": "14",
 	" s ä t H ?": "Häst", " r s i G ?": "Gris",
 	" 2 +  5 ?": "7", " R s o ?": "Ros",
-	" o B k ?": "Bok"
+	" o B k ?": "Bok", " S o k ?": "Sko",
+	" F s i k ?": "Fisk", " 4 + 5 ?": "9",
+	" t å B ?": "Båt"
 }
 
 questions = list()
@@ -33,7 +35,7 @@ for question in questions:
 		antal_correct += 1
 		print "Rätt"
 	else:
-		print "Fel"
+		print "Fel, rätt svar " + question.answer 
 
 print seperator
 print "Du hade %s rätt utav %s frågor" % (antal_correct, len(questions))
