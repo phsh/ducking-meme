@@ -55,7 +55,10 @@ def generateWordQuestion(list_of_words=level_word[0]):
 print seperator
 print "Frågesport "
 print seperator
-
+antal_fragor_total = 0;
+antal_correct_total = 0;
+antal_gold_stars = 0;
+antal_silver_stars = 0;
 for level in range(MAX_LEVEL):
 	print "LEVEL " + str(level + 1)
 	print seperator
@@ -68,20 +71,27 @@ for level in range(MAX_LEVEL):
 	antal_correct = 0
 	for question in questions:
 		answer = raw_input(question.question + " :")
+		antal_fragor_total += 1
 		if answer.lower().strip() == question.answer.lower().strip():
 			antal_correct += 1
+			antal_correct_total += 1
 			print "Rätt"
 		else:
 			print "Fel, rätt svar " + question.answer 
 
 	print seperator
-	print "Du hade %s rätt utav %s frågor" % (antal_correct, len(questions))
+	print "Du hade %s rätt utav %s frågor i denna level" % (antal_correct, len(questions))
 	print seperator
 	if len(questions)-antal_correct <= 1:
 		print "GULDSTJÄRNA!!!"
+		antal_gold_stars +=1
 		print seperator
 		print seperator
 	elif len(questions)-antal_correct <=3:
 		print "SILVERSTJÄRNA!!!"
+		antal_silver_stars +=1
 		print seperator
 		print seperator
+print seperator
+print "Du hade %s rätt utav %s frågor totalt" % (antal_correct_total, antal_fragor_total)
+print "Du hade %s GULDSTJÄRNOR och %s SILVERSTJÄRNOR" % (antal_gold_stars,antal_silver_stars)
