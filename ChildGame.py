@@ -13,16 +13,6 @@ print seperator
 print "Frågesport"
 print seperator
 
-aLotOfQuestions = {
-	" 2 +  6 ? ": "8", " 4 +  6 ? ": "10",
-	" 4 +  8 ? ": "12"," 1 + 13 ? ": "14",
-	" s ä t H ? ": "Häst", " r s i G ? ": "Gris",
-	" 2 +  5 ? ": "7", " R s o ? ": "Ros",
-	" o B k ? ": "Bok", " S o k ? ": "Sko",
-	" F s i k ? ": "Fisk", " 4 + 5 ?": "9",
-	" t å B ? ": "Båt"
-}
-
 level_one = [
 'Fisk','Ros','Sko',
 'Gris', 'Stol', 'Hus', 
@@ -50,15 +40,6 @@ questions = list()
 for x in xrange(0,5):
 	questions.append(generateWordQuestion())
 	questions.append(generateMathQuestion(1,10))
-
-'''
-questionsFile = open("questions.csv","w")
-w = csv.writer(questionsFile)
-for key, val in aLotOfQuestions.items():
-	w.writerow([key,val])
-	questions.append(Question(key,val))
-questionsFile.close()
-'''
 
 antal_correct = 0
 for question in questions:
