@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-import csv
+import csv, os
 import random, array
 from random import shuffle
 from random import randint
@@ -57,7 +57,7 @@ def generateWordQuestion(list_of_words=level_word[0]):
 	result = " ".join(word)
 	question = " " + result + " ? " 
 	return Question(question, answer)
-
+os.system('clear')
 print seperator
 print "Frågesport "
 print seperator
