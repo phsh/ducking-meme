@@ -29,7 +29,7 @@ two = [
 'Torsk', 'Potatis', 'Fluga',
 'Tunnel', 'Farmor', 'Farfar',
 'Mormor', 'Morfar', 'Gammal',
-'Groda'
+'Groda', 'Flygplan','Pannkaka'
 ]
 
 level_word = [zero, one, two]
