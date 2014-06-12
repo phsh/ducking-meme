@@ -1,3 +1,4 @@
+# _author_ Per Hedman
 class Question:
 	
 	def __init__(self, question, answer, level = 0):
