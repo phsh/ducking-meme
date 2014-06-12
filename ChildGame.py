@@ -34,16 +34,17 @@ two = [
 
 level_word = [zero, one, two]
 level_math = [ 1, 5, 10]
-level = 0
 
-def generateMathQuestion(start_base=level_math[level], end_base = level_math[level]+5):
+MAX_LEVEL = 3
+NUMBER_OF_QUESTIONS = 5
+def generateMathQuestion(start_base=level_math[0], end_base = level_math[0]+5):
 	value_a = randint(start_base , end_base)
 	value_b = randint(start_base , end_base)
 	question = " %s + %s ? " % (value_a, value_b)
 	answer = str(value_a+value_b)
 	return Question(question,answer)
 
-def generateWordQuestion(list_of_words=level_word[level]):
+def generateWordQuestion(list_of_words=level_word[0]):
 	answer = choice(list_of_words)
 	word = list(answer)
 	shuffle(word)
@@ -55,29 +56,32 @@ print seperator
 print "Frågesport "
 print seperator
 
-questions = list()
+for level in range(MAX_LEVEL):
+	print "LEVEL " + str(level + 1)
+	print seperator
+	questions = list()
 
-for x in xrange(0,5):
-	questions.append(generateWordQuestion())
-	questions.append(generateMathQuestion())
+	for x in range(NUMBER_OF_QUESTIONS):
+		questions.append(generateWordQuestion(level_word[level]))
+		questions.append(generateMathQuestion(level_math[level],level_math[level]+5))
+	shuffle(questions)
+	antal_correct = 0
+	for question in questions:
+		answer = raw_input(question.question + " :")
+		if answer.lower().strip() == question.answer.lower().strip():
+			antal_correct += 1
+			print "Rätt"
+		else:
+			print "Fel, rätt svar " + question.answer 
 
-antal_correct = 0
-for question in questions:
-	answer = raw_input(question.question + " :")
-	if answer.lower().strip() == question.answer.lower().strip():
-		antal_correct += 1
-		print "Rätt"
-	else:
-		print "Fel, rätt svar " + question.answer 
-
-print seperator
-print "Du hade %s rätt utav %s frågor" % (antal_correct, len(questions))
-print seperator
-if len(questions)-antal_correct <= 1:
-	print "GULDSTJÄRNA!!!"
 	print seperator
+	print "Du hade %s rätt utav %s frågor" % (antal_correct, len(questions))
 	print seperator
-elif len(questions)-antal_correct <=3:
-	print "SILVERSTJÄRNA!!!"
-	print seperator
-	print seperator
+	if len(questions)-antal_correct <= 1:
+		print "GULDSTJÄRNA!!!"
+		print seperator
+		print seperator
+	elif len(questions)-antal_correct <=3:
+		print "SILVERSTJÄRNA!!!"
+		print seperator
+		print seperator
