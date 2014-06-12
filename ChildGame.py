@@ -22,7 +22,12 @@ aLotOfQuestions = {
 	" t å B ? ": "Båt"
 }
 
-level_one = ['Häst','Båt','Fisk','Ros','Sko','Gris', 'Räv', 'Stol']
+level_one = [
+'Fisk','Ros','Sko',
+'Gris', 'Stol', 'Hus', 
+'Mus', 'Hund', 'Katt',
+'Hand'
+]
 
 
 def generateMathQuestion(start_base, end_base ):
@@ -33,19 +38,10 @@ def generateMathQuestion(start_base, end_base ):
 	return question,answer
 
 def generateWordQuestion(list_of_words=level_one):
-	
-	print list_of_words[0]
+
+	print len(list_of_words[0])
 	print list_of_words
 
-def shuffle_text(text):
-    if isinstance(text, unicode):
-        temp= array.array('u', text)
-        converter= temp.tounicode
-    else:
-        temp= array.array('c', text)
-        converter= temp.tostring
-    random.shuffle(temp)
-    return converter()
 
 
 print generateWordQuestion()
