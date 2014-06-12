@@ -1,6 +1,9 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
 import csv
+import random, array
+from random import shuffle
+from random import randint
 from Question import Question
 
 seperator = "=========" * 10
@@ -12,12 +15,42 @@ print seperator
 aLotOfQuestions = {
 	" 2 +  6 ? ": "8", " 4 +  6 ? ": "10",
 	" 4 +  8 ? ": "12"," 1 + 13 ? ": "14",
-	" s ä t H ?": "Häst", " r s i G ?": "Gris",
-	" 2 +  5 ?": "7", " R s o ?": "Ros",
-	" o B k ?": "Bok", " S o k ?": "Sko",
-	" F s i k ?": "Fisk", " 4 + 5 ?": "9",
-	" t å B ?": "Båt"
+	" s ä t H ? ": "Häst", " r s i G ? ": "Gris",
+	" 2 +  5 ? ": "7", " R s o ? ": "Ros",
+	" o B k ? ": "Bok", " S o k ? ": "Sko",
+	" F s i k ? ": "Fisk", " 4 + 5 ?": "9",
+	" t å B ? ": "Båt"
 }
+
+level_one = ['Häst','Båt','Fisk','Ros','Sko','Gris', 'Räv', 'Stol']
+
+
+def generateMathQuestion(start_base, end_base ):
+	value_a = randint(start_base , end_base)
+	value_b = randint(start_base , end_base)
+	question = " " + str(value_a) + " + " + str(value_b) + " ? "
+	answer = str(value_a+value_b)
+	return question,answer
+
+def generateWordQuestion(list_of_words=level_one):
+	
+	print list_of_words[0]
+	print list_of_words
+
+def shuffle_text(text):
+    if isinstance(text, unicode):
+        temp= array.array('u', text)
+        converter= temp.tounicode
+    else:
+        temp= array.array('c', text)
+        converter= temp.tostring
+    random.shuffle(temp)
+    return converter()
+
+
+print generateWordQuestion()
+print aLotOfQuestions
+
 
 questions = list()
 questionsFile = open("questions.csv","w")
