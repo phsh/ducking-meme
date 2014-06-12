@@ -33,7 +33,6 @@ two = [
 ]
 
 level_word = [zero, one, two]
-
 level_math = [ 1, 5, 10]
 level = 0
 
