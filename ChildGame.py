@@ -13,26 +13,36 @@ print seperator
 print "Frågesport"
 print seperator
 
-level_one = [
+one = [
 'Fisk','Ros','Sko',
 'Gris', 'Stol', 'Hus', 
 'Mus', 'Hund', 'Katt',
-'Hand'
+'Hand', 'Lax', 'Yxa',
+'Saga', 'Film', 'Bil',
+'Sten', 'Gren'
 ]
+two = [
+'Matta', 'Pappa', 'Mamma',
+'Torsk', 'Potatis', 'Svärd'
+'Tunnel', 'Farmor', 'Farfar',
+'Mormor', 'Morfar', 'Gammal',
+'Groda'
+]
+level = [one, two]
 
 def generateMathQuestion(start_base, end_base ):
 	value_a = randint(start_base , end_base)
 	value_b = randint(start_base , end_base)
-	question = " " + str(value_a) + " + " + str(value_b) + " ? "
+	question = " %s + %s ?" % (value_a, value_b)
 	answer = str(value_a+value_b)
 	return Question(question,answer)
 
-def generateWordQuestion(list_of_words=level_one):
+def generateWordQuestion(list_of_words=level[0]):
 	answer = choice(list_of_words)
 	word = list(answer)
 	shuffle(word)
 	result = " ".join(word)
-	question = result + " ? " 
+	question = " " + result + " ? " 
 	return Question(question, answer)
 
 questions = list()
