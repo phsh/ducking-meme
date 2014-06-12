@@ -52,8 +52,6 @@ def generateWordQuestion(list_of_words=level_word[level]):
 	question = " " + result + " ? " 
 	return Question(question, answer)
 
-
-
 print seperator
 print "Frågesport "
 print seperator
