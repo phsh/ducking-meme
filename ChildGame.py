@@ -12,19 +12,25 @@ seperator = "=========" * 10
 zero = [
 'Bi', 'Lo', 'Nu',
 'Ut', 'Om', 'En',
-'Yr' 
+'Yr', 'Ek', 'Se',
+'Sy', 'Av', 'Du'
 ]
 
 one = [
-'Fisk','Ros','Sko',
-'Gris', 'Stol', 'Hus', 
-'Mus', 'Hund', 'Katt',
-'Hand', 'Lax', 'Yxa',
-'Saga', 'Film', 'Bil',
-'Sten', 'Gren'
+'Bil', 'Bok', 'Vas',
+'Ros', 'Sko', 'Hus',
+'Yxa', 'Lax', 'Mus',
+'Ord', 'Oxe', 'Arg'
 ]
 
 two = [
+'Fisk','Gris', 'Stol',  
+'Hund', 'Katt','Hand', 
+'Saga', 'Film', 'Jobb',
+'Sten', 'Gren'
+]
+
+three = [
 'Matta', 'Pappa', 'Mamma',
 'Torsk', 'Potatis', 'Fluga',
 'Tunnel', 'Farmor', 'Farfar',
@@ -32,10 +38,10 @@ two = [
 'Groda', 'Flygplan','Pannkaka'
 ]
 
-level_word = [zero, one, two]
-level_math = [ 1, 5, 10]
+level_word = [zero, one, two, three]
+level_math = [ 1, 5, 10, 15]
 
-MAX_LEVEL = 3
+MAX_LEVEL = 4
 NUMBER_OF_QUESTIONS = 5
 def generateMathQuestion(start_base=level_math[0], end_base = level_math[0]+5):
 	value_a = randint(start_base , end_base)
@@ -95,3 +101,4 @@ for level in range(MAX_LEVEL):
 print seperator
 print "Du hade %s rätt utav %s frågor totalt" % (antal_correct_total, antal_fragor_total)
 print "Du hade %s GULDSTJÄRNOR och %s SILVERSTJÄRNOR" % (antal_gold_stars,antal_silver_stars)
+print seperator
