@@ -78,7 +78,7 @@ for level in range(MAX_LEVEL):
 	for question in questions:
 		answer = raw_input(question.question + " :")
 		antal_fragor_total += 1
-		if answer.lower().strip() == question.answer.lower().strip():
+		if question.isCorrect(answer):
 			antal_correct += 1
 			antal_correct_total += 1
 			print "Rätt"
