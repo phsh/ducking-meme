@@ -6,6 +6,7 @@ from random import shuffle
 from random import randint
 from random import choice
 from Question import Question
+from Question import QuestionGenerator
 
 seperator = "=========" * 10
 
@@ -44,20 +45,9 @@ GOLD=0
 SILVER=1
 MAX_LEVEL = 4
 NUMBER_OF_QUESTIONS = 5
-def generateMathQuestion(start_base=level_math[0], end_base = level_math[0]+5):
-	value_a = randint(start_base , end_base)
-	value_b = randint(start_base , end_base)
-	question = " %s + %s ? " % (value_a, value_b)
-	answer = str(value_a+value_b)
-	return Question(question,answer)
 
-def generateWordQuestion(list_of_words=level_word[0]):
-	answer = choice(list_of_words)
-	word = list(answer)
-	shuffle(word)
-	result = " ".join(word)
-	question = " " + result + " ? " 
-	return Question(question, answer)
+
+
 os.system('clear')
 print seperator
 print "Frågesport "
@@ -71,8 +61,9 @@ for level in range(MAX_LEVEL):
 	questions = list()
 
 	for x in range(NUMBER_OF_QUESTIONS):
-		questions.append(generateWordQuestion(level_word[level]))
-		questions.append(generateMathQuestion(level_math[level],level_math[level]+5))
+		kalle = QuestionGenerator()
+		questions.append(kalle.generateWordQuestion(level_word[level]))
+		questions.append(kalle.generateMathQuestion(level_math[level],level_math[level]+5))
 	shuffle(questions)
 	antal_correct = 0
 	for question in questions:
