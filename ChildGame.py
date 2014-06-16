@@ -40,7 +40,8 @@ three = [
 
 level_word = [zero, one, two, three]
 level_math = [ 1, 5, 10, 15]
-
+GOLD=0
+SILVER=1
 MAX_LEVEL = 4
 NUMBER_OF_QUESTIONS = 5
 def generateMathQuestion(start_base=level_math[0], end_base = level_math[0]+5):
@@ -63,8 +64,7 @@ print "Frågesport "
 print seperator
 antal_fragor_total = 0;
 antal_correct_total = 0;
-antal_gold_stars = 0;
-antal_silver_stars = 0;
+stars = [ 0, 0 ]
 for level in range(MAX_LEVEL):
 	print "LEVEL " + str(level + 1)
 	print seperator
@@ -90,15 +90,15 @@ for level in range(MAX_LEVEL):
 	print seperator
 	if len(questions)-antal_correct <= 1:
 		print "GULDSTJÄRNA!!!"
-		antal_gold_stars +=1
+		stars[GOLD] += 1		
 		print seperator
 		print seperator
 	elif len(questions)-antal_correct <=3:
 		print "SILVERSTJÄRNA!!!"
-		antal_silver_stars +=1
+		stars[SILVER] += 1		
 		print seperator
 		print seperator
 print seperator
 print "Du hade %s rätt utav %s frågor totalt" % (antal_correct_total, antal_fragor_total)
-print "Du hade %s GULDSTJÄRNOR och %s SILVERSTJÄRNOR" % (antal_gold_stars,antal_silver_stars)
+print "Du hade %s GULDSTJÄRNOR och %s SILVERSTJÄRNOR" % (stars[GOLD],stars[SILVER])
 print seperator
