@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 import csv, os
 import random, array
+import time
 from Question import Question
 from QuestionGenerator import QuestionGenerator
 from Level import Level
@@ -33,7 +34,7 @@ def startLevel(level):
 	print seperator
 	questions = generateQuestions(level)
 	return questions
-
+start = time.time()
 for level in range(Level.MAX_LEVEL):
 	antal_correct_level = 0
 	questions = startLevel(level)
@@ -58,9 +59,11 @@ for level in range(Level.MAX_LEVEL):
 		print "SILVERSTJÄRNA!!!"
 		stars[SILVER] += 1		
 		print seperator		
+
 print seperator
 print "Du hade %s rätt utav %s frågor totalt" % (antal_correct_total, antal_fragor_total)
 print "Du hade %s GULDSTJÄRNOR och %s SILVERSTJÄRNOR" % (stars[GOLD],stars[SILVER])
+print "Det tog %.3f sekunder." % ( time.time() - start )
 print seperator
 
 
