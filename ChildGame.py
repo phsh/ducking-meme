@@ -2,9 +2,7 @@
 # -*- coding: UTF-8 -*-
 import csv, os
 import random, array
-from random import shuffle
-from random import randint
-from random import choice
+
 from Question import Question
 from Question import QuestionGenerator
 
@@ -64,7 +62,7 @@ for level in range(MAX_LEVEL):
 		kalle = QuestionGenerator()
 		questions.append(kalle.generateWordQuestion(level_word[level]))
 		questions.append(kalle.generateMathQuestion(level_math[level],level_math[level]+5))
-	shuffle(questions)
+	random.shuffle(questions)
 	antal_correct = 0
 	for question in questions:
 		answer = raw_input(question.question + " :")
