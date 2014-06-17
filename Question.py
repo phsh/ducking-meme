@@ -36,7 +36,7 @@ class TestQuestion(unittest.TestCase):
 	wordList = ['kalle']
 	def setUp(self):
 		self.question = Question('4 + 4 ?','8')
-		self.generatedQuestion = QuestionGenerator().generateWordQuestion(wordList[0])
+		self.generatedQuestion = QuestionGenerator().generateWordQuestion(self.wordList)
 
 	def test_true_question(self):
 		self.assertTrue(self.question.isCorrect('8'))
