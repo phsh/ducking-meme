@@ -1,6 +1,6 @@
 
 class Level:
-	
+	MAX_LEVEL = 4
 	zero = [
 	'Bi', 'Lo', 'Nu',
 	'Ut', 'Om', 'En',
@@ -26,3 +26,7 @@ class Level:
 	'Mormor', 'Morfar', 'Gammal',
 	'Groda', 'Flygplan','Pannkaka'
 	]
+
+	level_math = [ 1, 5, 10, 15]
+
+	level_word = [zero, one, two, three]

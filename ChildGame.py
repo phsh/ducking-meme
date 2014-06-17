@@ -9,11 +9,11 @@ from Level import Level
 
 seperator = "=========" * 10
 
-level_word = [Level.zero, Level.one, Level.two, Level.three]
-level_math = [ 1, 5, 10, 15]
+
+
 GOLD=0
 SILVER=1
-MAX_LEVEL = 4
+
 NUMBER_OF_QUESTIONS = 5
 
 os.system('clear')
@@ -23,14 +23,14 @@ print seperator
 antal_fragor_total = 0;
 antal_correct_total = 0;
 stars = [ 0, 0 ]
-for level in range(MAX_LEVEL):
+for level in range(Level.MAX_LEVEL):
 	print "LEVEL " + str(level + 1)
 	print seperator
 	questions = list()
 
 	for x in range(NUMBER_OF_QUESTIONS):
-		questions.append(QuestionGenerator.generateWordQuestion(level_word[level]))
-		questions.append(QuestionGenerator.generateMathQuestion(level_math[level],level_math[level]+5))
+		questions.append(QuestionGenerator.generateWordQuestion(Level.level_word[level]))
+		questions.append(QuestionGenerator.generateMathQuestion(Level.level_math[level],Level.level_math[level]+5))
 	random.shuffle(questions)
 	antal_correct = 0
 	for question in questions:
