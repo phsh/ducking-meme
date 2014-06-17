@@ -10,6 +10,3 @@ class Question:
 
 	def isCorrect(self, my_answer):
 		return self.answer.lower().strip() == my_answer.lower().strip()
-
-
-
