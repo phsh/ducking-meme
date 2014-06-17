@@ -29,7 +29,7 @@ antal_correct_total = 0;
 stars = [ 0, 0 ]
 
 def startLevel(level):
-	print "LEVEL " + str(level + 1)
+	print "LEVEL %s" % (level + 1)
 	print seperator
 	questions = generateQuestions(level)
 	return questions
@@ -53,13 +53,11 @@ for level in range(Level.MAX_LEVEL):
 	if len(questions)-antal_correct_level <= 1:
 		print "GULDSTJÄRNA!!!"
 		stars[GOLD] += 1		
-		print seperator
-		print seperator
+		print seperator		
 	elif len(questions)-antal_correct_level <=3:
 		print "SILVERSTJÄRNA!!!"
 		stars[SILVER] += 1		
-		print seperator
-		print seperator
+		print seperator		
 print seperator
 print "Du hade %s rätt utav %s frågor totalt" % (antal_correct_total, antal_fragor_total)
 print "Du hade %s GULDSTJÄRNOR och %s SILVERSTJÄRNOR" % (stars[GOLD],stars[SILVER])
