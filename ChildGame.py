@@ -4,7 +4,7 @@ import csv, os
 import random, array
 
 from Question import Question
-from Question import QuestionGenerator
+from QuestionGenerator import QuestionGenerator
 
 seperator = "=========" * 10
 

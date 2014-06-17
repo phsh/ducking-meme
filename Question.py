@@ -3,7 +3,7 @@ import unittest
 from random import shuffle
 from random import randint
 from random import choice
-
+#from QuestionGenerator import QuestionGenerator Circular dependencies
 class Question:
 	
 	def __init__(self, question, answer, level = 0):
@@ -14,30 +14,12 @@ class Question:
 	def isCorrect(self, my_answer):
 		return self.answer.lower().strip() == my_answer.lower().strip()
 
-class QuestionGenerator:
-	@classmethod
-	def generateMathQuestion(self,start_base, end_base):
-		value_a = randint(start_base , end_base)
-		value_b = randint(start_base , end_base)
-		question = " %s + %s ? " % (value_a, value_b)
-		answer = str(value_a+value_b)
-		return Question(question,answer)
-	@classmethod
-	def generateWordQuestion(self,list_of_words):
-		answer = choice(list_of_words)
-		word = list(answer)
-		shuffle(word)
-		result = " ".join(word)
-		question = " " + result + " ? " 
-		return Question(question, answer)
-
-
 
 class TestQuestion(unittest.TestCase):
 	wordList = ['kalle']
 	def setUp(self):
 		self.question = Question('4 + 4 ?','8')
-		self.generatedQuestion = QuestionGenerator().generateWordQuestion(self.wordList)
+		self.generatedQuestion = Question('kalle','kalle')
 
 	def test_true_question(self):
 		self.assertTrue(self.question.isCorrect('8'))
