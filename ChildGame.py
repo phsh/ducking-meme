@@ -44,8 +44,6 @@ SILVER=1
 MAX_LEVEL = 4
 NUMBER_OF_QUESTIONS = 5
 
-
-
 os.system('clear')
 print seperator
 print "Frågesport "
@@ -59,9 +57,8 @@ for level in range(MAX_LEVEL):
 	questions = list()
 
 	for x in range(NUMBER_OF_QUESTIONS):
-		kalle = QuestionGenerator()
-		questions.append(kalle.generateWordQuestion(level_word[level]))
-		questions.append(kalle.generateMathQuestion(level_math[level],level_math[level]+5))
+		questions.append(QuestionGenerator.generateWordQuestion(level_word[level]))
+		questions.append(QuestionGenerator.generateMathQuestion(level_math[level],level_math[level]+5))
 	random.shuffle(questions)
 	antal_correct = 0
 	for question in questions:
