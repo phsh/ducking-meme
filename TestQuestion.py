@@ -1,3 +1,4 @@
+#!/usr/bin/python
 # _author_ Per Hedman
 import unittest
 from Question import Question
@@ -36,4 +37,5 @@ class TestQuestion(unittest.TestCase):
 		self.assertTrue(question.isCorrect('2'))
 
 if __name__  =='__main__':
-	unittest.main()
+	suite = unittest.TestLoader().loadTestsFromTestCase(TestQuestion)
+	unittest.TextTestRunner(verbosity=2).run(suite)
