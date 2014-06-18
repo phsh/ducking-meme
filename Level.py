@@ -1,4 +1,4 @@
-
+# _author_ Per Hedman
 class Level:
 	MAX_LEVEL = 4
 	zero = [

@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# _author_ Per Hedman
 # -*- coding: UTF-8 -*-
 import csv, os
 import random, array
