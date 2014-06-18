@@ -9,13 +9,17 @@ from Level import Level
 
 def generateQuestions(level):
 	questions = list()
-
 	for x in range(NUMBER_OF_QUESTIONS):
 		questions.append(QuestionGenerator.generateWordQuestion(Level.level_word[level]))
 		questions.append(QuestionGenerator.generateMathQuestion(Level.level_math[level],Level.level_math[level]+5))
 	random.shuffle(questions)
 	return questions
 
+def startLevel(level):
+	print "LEVEL %s" % (level + 1)
+	print seperator
+	questions = generateQuestions(level)
+	return questions
 
 seperator = "=========" * 10
 GOLD=0
@@ -29,11 +33,6 @@ antal_fragor_total = 0;
 antal_correct_total = 0;
 stars = [ 0, 0 ]
 
-def startLevel(level):
-	print "LEVEL %s" % (level + 1)
-	print seperator
-	questions = generateQuestions(level)
-	return questions
 start = time.time()
 for level in range(Level.MAX_LEVEL):
 	antal_correct_level = 0
