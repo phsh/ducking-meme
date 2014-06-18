@@ -11,22 +11,34 @@ class Level:
 	'Bil', 'Bok', 'Vas',
 	'Ros', 'Sko', 'Hus',
 	'Yxa', 'Lax', 'Mus',
-	'Ord', 'Oxe', 'Arg'
+	'Ord', 'Oxe', 'Arg',
+	'Haj'
 	]
 	two = [
-	'Fisk','Gris', 'Stol',  
-	'Hund', 'Katt','Hand', 
+	'Fisk', 'Gris', 'Stol',  
+	'Hund', 'Katt', 'Hand', 
 	'Saga', 'Film', 'Jobb',
-	'Sten', 'Gren'
+	'Sten', 'Gren', 'Grav',
+	'Anka', 'Kiwi'
 	]
 	three = [
 	'Matta', 'Pappa', 'Mamma',
-	'Torsk', 'Potatis', 'Fluga',
-	'Tunnel', 'Farmor', 'Farfar',
-	'Mormor', 'Morfar', 'Gammal',
-	'Groda', 'Flygplan','Pannkaka'
+	'Torsk', 'Fluga', 'Groda',
+	'Banan', 'Slott', 'Ficka',
+	'Pojke', 'Drake', 'Stege',
+	'Gruva', 'Morot', 'Fiska'
 	]
-
+	four = [
+	'Tunnel', 'Farfar', 'Farmor',
+	'Morfar', 'Mormor', 'Gammal',
+	'Tunnel', 'Flicka', 'Grotta',
+	'Ekorre', 'Pengar'
+	]
+	five = [
+	'Flygplan','Pannkaka','Potatis',
+	'Tunnelbana', 'Apelsin','Spel'
+	]
+	
 	level_math = [ 1, 5, 10, 15]
 
 	level_word = [zero, one, two, three]
