@@ -19,7 +19,7 @@ class Level:
 	'Hund', 'Katt', 'Hand', 
 	'Saga', 'Film', 'Jobb',
 	'Sten', 'Gren', 'Grav',
-	'Anka', 'Kiwi'
+	'Anka', 'Kiwi', 'Spel'
 	]
 	three = [
 	'Matta', 'Pappa', 'Mamma',
@@ -32,11 +32,11 @@ class Level:
 	'Tunnel', 'Farfar', 'Farmor',
 	'Morfar', 'Mormor', 'Gammal',
 	'Tunnel', 'Flicka', 'Grotta',
-	'Ekorre', 'Pengar'
+	'Ekorre', 'Pengar', ''
 	]
 	five = [
 	'Flygplan','Pannkaka','Potatis',
-	'Tunnelbana', 'Apelsin','Spel'
+	'Tunnelbana', 'Apelsin','Prinsessa'
 	]
 	
 	level_math = [ 1, 5, 10, 15]
